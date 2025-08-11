@@ -16,7 +16,7 @@ Projects cover **Embedded C**, **Advanced C programming**, **PIC microcontroller
 - **Languages:** C, Embedded C, C++
 - **Microcontroller:** PIC16F877A
 - **Protocols:** UART, I2C
-- **Tools:** MPLAB X IDE, Keil µVision, Proteus Simulation, GCC, GDB, Makefile
+- **Tools:** MPLAB X IDE, GCC, GDB, Makefile
 - **Concepts:** Data Structures, File Handling, Tokenization, Real-Time Event Logging, Linux System Calls
 
 ## 📌 Note
