@@ -1,0 +1,1859 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"17 ./ds1307.h
+[; ;./ds1307.h: 17: unsigned char read_ds1307(unsigned char addr);
+[v _read_ds1307 `(uc ~T0 @X0 0 ef1`uc ]
+"34 ./clcd.h
+[; ;./clcd.h: 34: void clcd_putch(const char data, unsigned char addr);
+[v _clcd_putch `(v ~T0 @X0 0 ef2`Cuc`uc ]
+"35
+[; ;./clcd.h: 35: void clcd_print(const char *str, unsigned char addr);
+[v _clcd_print `(v ~T0 @X0 0 ef2`*Cuc`uc ]
+"14 ./External_EEPROM_AT24C04.h
+[; ;./External_EEPROM_AT24C04.h: 14: void eeprom_write_string(unsigned char addr, char *data);
+[v _eeprom_write_string `(v ~T0 @X0 0 ef2`uc`*uc ]
+"34 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 34: char *strncpy (char *restrict, const char *restrict, size_t);
+[v _strncpy `(*uc ~T0 @X0 0 ef3`*uc`*Cuc`ui ]
+"12 ./External_EEPROM_AT24C04.h
+[; ;./External_EEPROM_AT24C04.h: 12: unsigned char eeprom_read(unsigned char addr);
+[v _eeprom_read `(uc ~T0 @X0 0 ef1`uc ]
+"40 C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.46\pic\include\c99\string.h: 40: int strncmp (const char *, const char *, size_t);
+[v _strncmp `(i ~T0 @X0 0 ef3`*Cuc`*Cuc`ui ]
+"15 ./function_prototypes.h
+[; ;./function_prototypes.h: 15: void clear_screen(void);
+[v _clear_screen `(v ~T0 @X0 0 ef ]
+"36 ./clcd.h
+[; ;./clcd.h: 36: void clcd_write(unsigned char byte, unsigned char mode);
+[v _clcd_write `(v ~T0 @X0 0 ef2`uc`uc ]
+[v F164 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\builtins.h
+[v __delay `JF164 ~T0 @X0 0 e ]
+[p i __delay ]
+"13 ./uart.h
+[; ;./uart.h: 13: void puts(const char *s);
+[v _puts `(v ~T0 @X0 0 ef1`*Cuc ]
+"12
+[; ;./uart.h: 12: void putchar(unsigned char data);
+[v _putchar `(v ~T0 @X0 0 ef1`uc ]
+"18 ./ds1307.h
+[; ;./ds1307.h: 18: void write_ds1307(unsigned char addr, unsigned char data);
+[v _write_ds1307 `(v ~T0 @X0 0 ef2`uc`uc ]
+"55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"62
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 62: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"69
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 69: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"76
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 76: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"162
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 162: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"169
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 169: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"219
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 219: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"281
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 281: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"343
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 343: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"405
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 405: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"437
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 437: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"457
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 457: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"535
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 535: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"597
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 597: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"637
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 637: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"644
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 644: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"651
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 651: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"658
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 658: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"733
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 733: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"740
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 740: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"811
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 811: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"818
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 818: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"888
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 888: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"895
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 895: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"902
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 902: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"909
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 909: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"967
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 967: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1062
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1062: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1069
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1069: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1076
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1076: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1083
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1083: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1090
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1090: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1097
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1097: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1155
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1155: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1162
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1162: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1258
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1258: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1328
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1328: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1378
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1378: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1440
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1440: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1502
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1502: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1564
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1564: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1621
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1621: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1683
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1683: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1723
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1723: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1757
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1757: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1819
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1819: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1826
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1826: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1833
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 1833: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2002
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2002: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2083
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2083: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2090
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2090: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2160
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2160: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2225
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2225: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2232
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2232: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2291
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2291: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2298
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2298: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2305
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2305: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2312
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2312: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2319
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2319: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2364
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\pic\include\proc\pic16f877a.h: 2364: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"9 function_definitions.c
+[; ;function_definitions.c: 9: char time[7];
+[v _time `uc ~T0 @X0 -> 7 `i e ]
+"10
+[; ;function_definitions.c: 10: unsigned char clock_reg[3];
+[v _clock_reg `uc ~T0 @X0 -> 3 `i e ]
+"11
+[; ;function_definitions.c: 11: char records[11];
+[v _records `uc ~T0 @X0 -> 11 `i e ]
+"12
+[; ;function_definitions.c: 12: int pos = -1;
+[v _pos `i ~T0 @X0 1 e ]
+[i _pos
+-U -> 1 `i
+]
+"13
+[; ;function_definitions.c: 13: unsigned char return_time, sec;
+[v _return_time `uc ~T0 @X0 1 e ]
+[v _sec `uc ~T0 @X0 1 e ]
+"14
+[; ;function_definitions.c: 14: unsigned char *menu[] = {"View Log", "Clear Log", "Download Log", "Set Time", "Change Passwd"};
+[v _menu `*uc ~T0 @X0 -> 5 `i e ]
+[i _menu
+:U ..
+:s 1C
+:s 2C
+:s 3C
+:s 4C
+:s 5C
+..
+]
+"15
+[; ;function_definitions.c: 15: int record_count = -1;
+[v _record_count `i ~T0 @X0 1 e ]
+[i _record_count
+-U -> 1 `i
+]
+"21
+[; ;function_definitions.c: 21: static void get_time(void) {
+[v _get_time `(v ~T0 @X0 1 sf ]
+{
+[e :U _get_time ]
+[f ]
+"23
+[; ;function_definitions.c: 23:     clock_reg[0] = read_ds1307(0x02);
+[e = *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ( _read_ds1307 (1 -> -> 2 `i `uc ]
+"24
+[; ;function_definitions.c: 24:     clock_reg[1] = read_ds1307(0x01);
+[e = *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ( _read_ds1307 (1 -> -> 1 `i `uc ]
+"25
+[; ;function_definitions.c: 25:     clock_reg[2] = read_ds1307(0x00);
+[e = *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ( _read_ds1307 (1 -> -> 0 `i `uc ]
+"28
+[; ;function_definitions.c: 28:     time[0] = ((clock_reg[0] >> 4) & 0x03) + '0';
+[e = *U + &U _time * -> -> -> 0 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & >> -> *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 4 `i -> 3 `i `ui -> 48 `ui `uc ]
+"29
+[; ;function_definitions.c: 29:     time[1] = (clock_reg[0] & 0x0F) + '0';
+[e = *U + &U _time * -> -> -> 1 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & -> *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 15 `i `ui -> 48 `ui `uc ]
+"32
+[; ;function_definitions.c: 32:     time[2] = ((clock_reg[1] >> 4) & 0x07) + '0';
+[e = *U + &U _time * -> -> -> 2 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & >> -> *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 4 `i -> 7 `i `ui -> 48 `ui `uc ]
+"33
+[; ;function_definitions.c: 33:     time[3] = (clock_reg[1] & 0x0F) + '0';
+[e = *U + &U _time * -> -> -> 3 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & -> *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 15 `i `ui -> 48 `ui `uc ]
+"36
+[; ;function_definitions.c: 36:     time[4] = ((clock_reg[2] >> 4) & 0x07) + '0';
+[e = *U + &U _time * -> -> -> 4 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & >> -> *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 4 `i -> 7 `i `ui -> 48 `ui `uc ]
+"37
+[; ;function_definitions.c: 37:     time[5] = (clock_reg[2] & 0x0F) + '0';
+[e = *U + &U _time * -> -> -> 5 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> & -> *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 15 `i `ui -> 48 `ui `uc ]
+"38
+[; ;function_definitions.c: 38:     time[6] = '\0';
+[e = *U + &U _time * -> -> -> 6 `i `ui `ux -> -> # *U &U _time `ui `ux -> -> 0 `ui `uc ]
+"39
+[; ;function_definitions.c: 39: }
+[e :UE 100 ]
+}
+"43
+[; ;function_definitions.c: 43: static void display_time(void) {
+[v _display_time `(v ~T0 @X0 1 sf ]
+{
+[e :U _display_time ]
+[f ]
+"44
+[; ;function_definitions.c: 44:     get_time();
+[e ( _get_time ..  ]
+"45
+[; ;function_definitions.c: 45:     clcd_putch(time[0], (0xC0 + 0));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 0 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 0 `i `uc ]
+"46
+[; ;function_definitions.c: 46:     clcd_putch(time[1], (0xC0 + 1));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 1 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 1 `i `uc ]
+"47
+[; ;function_definitions.c: 47:     clcd_putch(':', (0xC0 + 2));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 2 `i `uc ]
+"48
+[; ;function_definitions.c: 48:     clcd_putch(time[2], (0xC0 + 3));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 2 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 3 `i `uc ]
+"49
+[; ;function_definitions.c: 49:     clcd_putch(time[3], (0xC0 + 4));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 3 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 4 `i `uc ]
+"50
+[; ;function_definitions.c: 50:     clcd_putch(':', (0xC0 + 5));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 5 `i `uc ]
+"51
+[; ;function_definitions.c: 51:     clcd_putch(time[4], (0xC0 + 6));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 4 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 6 `i `uc ]
+"52
+[; ;function_definitions.c: 52:     clcd_putch(time[5], (0xC0 + 7));
+[e ( _clcd_putch (2 , *U + &U _time * -> -> -> 5 `i `ui `ux -> -> # *U &U _time `ui `ux -> + -> 192 `i -> 7 `i `uc ]
+"53
+[; ;function_definitions.c: 53: }
+[e :UE 101 ]
+}
+"57
+[; ;function_definitions.c: 57: void display_dashboard(unsigned char event[], unsigned char speed) {
+[v _display_dashboard `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _display_dashboard ]
+[v _event `*uc ~T0 @X0 1 r1 ]
+[v _speed `uc ~T0 @X0 1 r2 ]
+[f ]
+"59
+[; ;function_definitions.c: 59:     clcd_print("TIME     E  SP", (0x80 + 2));
+[e ( _clcd_print (2 , :s 6C -> + -> 128 `i -> 2 `i `uc ]
+"62
+[; ;function_definitions.c: 62:     display_time();
+[e ( _display_time ..  ]
+"65
+[; ;function_definitions.c: 65:     clcd_print(event, (0xC0 + 11));
+[e ( _clcd_print (2 , -> _event `*Cuc -> + -> 192 `i -> 11 `i `uc ]
+"68
+[; ;function_definitions.c: 68:     clcd_putch((speed / 10) + '0', (0xC0 + 14));
+[e ( _clcd_putch (2 , -> + -> / -> _speed `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 14 `i `uc ]
+"69
+[; ;function_definitions.c: 69:     clcd_putch((speed % 10) + '0', (0xC0 + 15));
+[e ( _clcd_putch (2 , -> + -> % -> _speed `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 15 `i `uc ]
+"70
+[; ;function_definitions.c: 70: }
+[e :UE 102 ]
+}
+"74
+[; ;function_definitions.c: 74: void store_records_EEPROM(void) {
+[v _store_records_EEPROM `(v ~T0 @X0 1 ef ]
+{
+[e :U _store_records_EEPROM ]
+[f ]
+"75
+[; ;function_definitions.c: 75:     static unsigned char addr = 0x05;
+[v F1260 `uc ~T0 @X0 1 s addr ]
+[i F1260
+-> -> 5 `i `uc
+]
+"76
+[; ;function_definitions.c: 76:     pos++;
+[e ++ _pos -> 1 `i ]
+"77
+[; ;function_definitions.c: 77:     if (pos == 10) {
+[e $ ! == _pos -> 10 `i 104  ]
+{
+"78
+[; ;function_definitions.c: 78:         pos = 0;
+[e = _pos -> 0 `i ]
+"79
+[; ;function_definitions.c: 79:     }
+}
+[e :U 104 ]
+"80
+[; ;function_definitions.c: 80:     addr = (pos * 10) + 0x05;
+[e = F1260 -> + * _pos -> 10 `i -> 5 `i `uc ]
+"81
+[; ;function_definitions.c: 81:     eeprom_write_string(addr, records);
+[e ( _eeprom_write_string (2 , F1260 &U _records ]
+"82
+[; ;function_definitions.c: 82:     if (record_count < 9) {
+[e $ ! < _record_count -> 9 `i 105  ]
+{
+"83
+[; ;function_definitions.c: 83:         record_count++;
+[e ++ _record_count -> 1 `i ]
+"84
+[; ;function_definitions.c: 84:     }
+}
+[e :U 105 ]
+"85
+[; ;function_definitions.c: 85: }
+[e :UE 103 ]
+}
+"89
+[; ;function_definitions.c: 89: void record_event(unsigned char event[], unsigned char speed) {
+[v _record_event `(v ~T0 @X0 1 ef2`*uc`uc ]
+{
+[e :U _record_event ]
+[v _event `*uc ~T0 @X0 1 r1 ]
+[v _speed `uc ~T0 @X0 1 r2 ]
+[f ]
+"90
+[; ;function_definitions.c: 90:     get_time();
+[e ( _get_time ..  ]
+"91
+[; ;function_definitions.c: 91:     strncpy(records, time, 6);
+[e ( _strncpy (3 , , &U _records -> &U _time `*Cuc -> -> 6 `i `ui ]
+"92
+[; ;function_definitions.c: 92:     strncpy(&records[6], event, 2);
+[e ( _strncpy (3 , , &U *U + &U _records * -> -> -> 6 `i `ui `ux -> -> # *U &U _records `ui `ux -> _event `*Cuc -> -> 2 `i `ui ]
+"93
+[; ;function_definitions.c: 93:     records[8] = speed / 10 + '0';
+[e = *U + &U _records * -> -> -> 8 `i `ui `ux -> -> # *U &U _records `ui `ux -> + -> / -> _speed `i -> 10 `i `ui -> 48 `ui `uc ]
+"94
+[; ;function_definitions.c: 94:     records[9] = speed % 10 + '0';
+[e = *U + &U _records * -> -> -> 9 `i `ui `ux -> -> # *U &U _records `ui `ux -> + -> % -> _speed `i -> 10 `i `ui -> 48 `ui `uc ]
+"95
+[; ;function_definitions.c: 95:     records[10] = '\0';
+[e = *U + &U _records * -> -> -> 10 `i `ui `ux -> -> # *U &U _records `ui `ux -> -> 0 `ui `uc ]
+"96
+[; ;function_definitions.c: 96:     store_records_EEPROM();
+[e ( _store_records_EEPROM ..  ]
+"97
+[; ;function_definitions.c: 97: }
+[e :UE 106 ]
+}
+"101
+[; ;function_definitions.c: 101: unsigned char login(unsigned char key, unsigned char reset_flag) {
+[v _login `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _login ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[v _reset_flag `uc ~T0 @X0 1 r2 ]
+[f ]
+"103
+[; ;function_definitions.c: 103:     static char usr_pwd[4];
+[v F1267 `uc ~T0 @X0 -> 4 `i s usr_pwd ]
+"104
+[; ;function_definitions.c: 104:     static unsigned char i;
+[v F1268 `uc ~T0 @X0 1 s i ]
+"105
+[; ;function_definitions.c: 105:     static unsigned char attempts_left;
+[v F1269 `uc ~T0 @X0 1 s attempts_left ]
+"108
+[; ;function_definitions.c: 108:     if (reset_flag == 0x02) {
+[e $ ! == -> _reset_flag `i -> 2 `i 108  ]
+{
+"109
+[; ;function_definitions.c: 109:         attempts_left = 3;
+[e = F1269 -> -> 3 `i `uc ]
+"110
+[; ;function_definitions.c: 110:         i = 0;
+[e = F1268 -> -> 0 `i `uc ]
+"112
+[; ;function_definitions.c: 112:         usr_pwd[0] = '\0';
+[e = *U + &U F1267 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1267 `ui `ux -> -> 0 `ui `uc ]
+"113
+[; ;function_definitions.c: 113:         usr_pwd[1] = '\0';
+[e = *U + &U F1267 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1267 `ui `ux -> -> 0 `ui `uc ]
+"114
+[; ;function_definitions.c: 114:         usr_pwd[2] = '\0';
+[e = *U + &U F1267 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1267 `ui `ux -> -> 0 `ui `uc ]
+"115
+[; ;function_definitions.c: 115:         usr_pwd[3] = '\0';
+[e = *U + &U F1267 * -> -> -> 3 `i `ui `ux -> -> # *U &U F1267 `ui `ux -> -> 0 `ui `uc ]
+"116
+[; ;function_definitions.c: 116:         key = 0x3F;
+[e = _key -> -> 63 `i `uc ]
+"117
+[; ;function_definitions.c: 117:         return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"118
+[; ;function_definitions.c: 118:     }
+}
+[e :U 108 ]
+"121
+[; ;function_definitions.c: 121:     if (return_time == 0) {
+[e $ ! == -> _return_time `i -> 0 `i 109  ]
+{
+"123
+[; ;function_definitions.c: 123:         return 0x33;
+[e ) -> -> 51 `i `uc ]
+[e $UE 107  ]
+"124
+[; ;function_definitions.c: 124:     }
+}
+[e :U 109 ]
+"127
+[; ;function_definitions.c: 127:     if (key == 0x37 && i < 4) {
+[e $ ! && == -> _key `i -> 55 `i < -> F1268 `i -> 4 `i 110  ]
+{
+"128
+[; ;function_definitions.c: 128:         usr_pwd[i] = '1';
+[e = *U + &U F1267 * -> F1268 `ux -> -> # *U &U F1267 `ui `ux -> -> 49 `ui `uc ]
+"129
+[; ;function_definitions.c: 129:         clcd_putch('*', (0xC0 + 6 + i));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + + -> 192 `i -> 6 `i -> F1268 `i `uc ]
+"130
+[; ;function_definitions.c: 130:         i++;
+[e ++ F1268 -> -> 1 `i `uc ]
+"131
+[; ;function_definitions.c: 131:         return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"132
+[; ;function_definitions.c: 132:     }
+}
+[e $U 111  ]
+"133
+[; ;function_definitions.c: 133:     else if (key == 0x2F && i < 4) {
+[e :U 110 ]
+[e $ ! && == -> _key `i -> 47 `i < -> F1268 `i -> 4 `i 112  ]
+{
+"134
+[; ;function_definitions.c: 134:         usr_pwd[i] = '0';
+[e = *U + &U F1267 * -> F1268 `ux -> -> # *U &U F1267 `ui `ux -> -> 48 `ui `uc ]
+"135
+[; ;function_definitions.c: 135:         clcd_putch('*', (0xC0 + 6 + i));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + + -> 192 `i -> 6 `i -> F1268 `i `uc ]
+"136
+[; ;function_definitions.c: 136:         i++;
+[e ++ F1268 -> -> 1 `i `uc ]
+"137
+[; ;function_definitions.c: 137:         return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"138
+[; ;function_definitions.c: 138:     }
+}
+[e :U 112 ]
+[e :U 111 ]
+"141
+[; ;function_definitions.c: 141:     if (i == 4) {
+[e $ ! == -> F1268 `i -> 4 `i 113  ]
+{
+"142
+[; ;function_definitions.c: 142:         unsigned char saved_pwd[4];
+[v _saved_pwd `uc ~T0 @X0 -> 4 `i a ]
+"143
+[; ;function_definitions.c: 143:         for (int j = 0; j < 4; j++) {
+{
+[v _j `i ~T0 @X0 1 a ]
+[e = _j -> 0 `i ]
+[e $ < _j -> 4 `i 114  ]
+[e $U 115  ]
+[e :U 114 ]
+{
+"144
+[; ;function_definitions.c: 144:             saved_pwd[j] = eeprom_read(j);
+[e = *U + &U _saved_pwd * -> -> _j `ui `ux -> -> # *U &U _saved_pwd `ui `ux ( _eeprom_read (1 -> _j `uc ]
+"145
+[; ;function_definitions.c: 145:         }
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 4 `i 114  ]
+[e :U 115 ]
+}
+"147
+[; ;function_definitions.c: 147:         if (strncmp(usr_pwd, saved_pwd, 4) == 0) {
+[e $ ! == ( _strncmp (3 , , -> &U F1267 `*Cuc -> &U _saved_pwd `*Cuc -> -> 4 `i `ui -> 0 `i 117  ]
+{
+"148
+[; ;function_definitions.c: 148:             clear_screen();
+[e ( _clear_screen ..  ]
+"149
+[; ;function_definitions.c: 149:             clcd_write(0x0C, 0);
+[e ( _clcd_write (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"150
+[; ;function_definitions.c: 150:             _delay((unsigned long)((100)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"151
+[; ;function_definitions.c: 151:             clcd_print("Login Success", (0x80 + 2));
+[e ( _clcd_print (2 , :s 7C -> + -> 128 `i -> 2 `i `uc ]
+"152
+[; ;function_definitions.c: 152:             _delay((unsigned long)((2000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"153
+[; ;function_definitions.c: 153:             return 0x01;
+[e ) -> -> 1 `i `uc ]
+[e $UE 107  ]
+"154
+[; ;function_definitions.c: 154:         } else {
+}
+[e $U 118  ]
+[e :U 117 ]
+{
+"155
+[; ;function_definitions.c: 155:             attempts_left--;
+[e -- F1269 -> -> 1 `i `uc ]
+"157
+[; ;function_definitions.c: 157:             if (attempts_left == 0) {
+[e $ ! == -> F1269 `i -> 0 `i 119  ]
+{
+"159
+[; ;function_definitions.c: 159:                 clear_screen();
+[e ( _clear_screen ..  ]
+"160
+[; ;function_definitions.c: 160:                 clcd_write(0x0C, 0);
+[e ( _clcd_write (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"161
+[; ;function_definitions.c: 161:                 clcd_print("You are Blocked", (0x80 + 0));
+[e ( _clcd_print (2 , :s 8C -> + -> 128 `i -> 0 `i `uc ]
+"163
+[; ;function_definitions.c: 163:                 clcd_print("Wait for...", (0xC0 + 0));
+[e ( _clcd_print (2 , :s 9C -> + -> 192 `i -> 0 `i `uc ]
+"164
+[; ;function_definitions.c: 164:                 clcd_print("sec", (0xC0 + 13));
+[e ( _clcd_print (2 , :s 10C -> + -> 192 `i -> 13 `i `uc ]
+"165
+[; ;function_definitions.c: 165:                 sec = 60;
+[e = _sec -> -> 60 `i `uc ]
+"166
+[; ;function_definitions.c: 166:                 while (sec) {
+[e $U 120  ]
+[e :U 121 ]
+{
+"167
+[; ;function_definitions.c: 167:                     clcd_putch(sec / 10 + '0', (0xC0 + 11));
+[e ( _clcd_putch (2 , -> + -> / -> _sec `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 11 `i `uc ]
+"168
+[; ;function_definitions.c: 168:                     clcd_putch(sec % 10 + '0', (0xC0 + 12));
+[e ( _clcd_putch (2 , -> + -> % -> _sec `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 12 `i `uc ]
+"169
+[; ;function_definitions.c: 169:                 }
+}
+[e :U 120 ]
+"166
+[; ;function_definitions.c: 166:                 while (sec) {
+[e $ != -> _sec `i -> 0 `i 121  ]
+[e :U 122 ]
+"170
+[; ;function_definitions.c: 170:                 attempts_left = 3;
+[e = F1269 -> -> 3 `i `uc ]
+"171
+[; ;function_definitions.c: 171:             } else {
+}
+[e $U 123  ]
+[e :U 119 ]
+{
+"172
+[; ;function_definitions.c: 172:                 clear_screen();
+[e ( _clear_screen ..  ]
+"173
+[; ;function_definitions.c: 173:                 clcd_write(0x0C, 0);
+[e ( _clcd_write (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"174
+[; ;function_definitions.c: 174:                 clcd_print("Wrong Password", (0x80 + 0));
+[e ( _clcd_print (2 , :s 11C -> + -> 128 `i -> 0 `i `uc ]
+"175
+[; ;function_definitions.c: 175:                 clcd_putch(attempts_left + '0', (0xC0 + 0));
+[e ( _clcd_putch (2 , -> + -> F1269 `ui -> 48 `ui `uc -> + -> 192 `i -> 0 `i `uc ]
+"176
+[; ;function_definitions.c: 176:                 clcd_print("attempts left", (0xC0 + 2));
+[e ( _clcd_print (2 , :s 12C -> + -> 192 `i -> 2 `i `uc ]
+"177
+[; ;function_definitions.c: 177:                 _delay((unsigned long)((2000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"178
+[; ;function_definitions.c: 178:             }
+}
+[e :U 123 ]
+"180
+[; ;function_definitions.c: 180:             clear_screen();
+[e ( _clear_screen ..  ]
+"181
+[; ;function_definitions.c: 181:             return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"182
+[; ;function_definitions.c: 182:             clcd_print("Enter Password", (0x80 + 1));
+[e ( _clcd_print (2 , :s 13C -> + -> 128 `i -> 1 `i `uc ]
+"183
+[; ;function_definitions.c: 183:             clcd_write((0xC0 + 5), 0);
+[e ( _clcd_write (2 , -> + -> 192 `i -> 5 `i `uc -> -> 0 `i `uc ]
+"184
+[; ;function_definitions.c: 184:             clcd_write(0x0F, 0);
+[e ( _clcd_write (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
+"185
+[; ;function_definitions.c: 185:             _delay((unsigned long)((100)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"186
+[; ;function_definitions.c: 186:             i = 0;
+[e = F1268 -> -> 0 `i `uc ]
+"187
+[; ;function_definitions.c: 187:         }
+}
+[e :U 118 ]
+"188
+[; ;function_definitions.c: 188:     }
+}
+[e :U 113 ]
+"189
+[; ;function_definitions.c: 189: }
+[e :UE 107 ]
+}
+"193
+[; ;function_definitions.c: 193: unsigned char display_menu(unsigned char key, unsigned char reset_flag) {
+[v _display_menu `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _display_menu ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[v _reset_flag `uc ~T0 @X0 1 r2 ]
+[f ]
+"195
+[; ;function_definitions.c: 195:     static unsigned char menu_pos;
+[v F1275 `uc ~T0 @X0 1 s menu_pos ]
+"198
+[; ;function_definitions.c: 198:     if (return_time == 0) {
+[e $ ! == -> _return_time `i -> 0 `i 125  ]
+{
+"200
+[; ;function_definitions.c: 200:         return 0x33;
+[e ) -> -> 51 `i `uc ]
+[e $UE 124  ]
+"201
+[; ;function_definitions.c: 201:     }
+}
+[e :U 125 ]
+"204
+[; ;function_definitions.c: 204:     if (reset_flag == 0x05) {
+[e $ ! == -> _reset_flag `i -> 5 `i 126  ]
+{
+"205
+[; ;function_definitions.c: 205:         return_time = 15;
+[e = _return_time -> -> 15 `i `uc ]
+"206
+[; ;function_definitions.c: 206:         menu_pos = 0;
+[e = F1275 -> -> 0 `i `uc ]
+"207
+[; ;function_definitions.c: 207:     }
+}
+[e :U 126 ]
+"210
+[; ;function_definitions.c: 210:     if (key == 0x37 && menu_pos > 0) {
+[e $ ! && == -> _key `i -> 55 `i > -> F1275 `i -> 0 `i 127  ]
+{
+"211
+[; ;function_definitions.c: 211:         return_time = 15;
+[e = _return_time -> -> 15 `i `uc ]
+"212
+[; ;function_definitions.c: 212:         menu_pos--;
+[e -- F1275 -> -> 1 `i `uc ]
+"213
+[; ;function_definitions.c: 213:         clear_screen();
+[e ( _clear_screen ..  ]
+"214
+[; ;function_definitions.c: 214:     }
+}
+[e $U 128  ]
+"215
+[; ;function_definitions.c: 215:     else if (key == 0x2F && menu_pos < 4) {
+[e :U 127 ]
+[e $ ! && == -> _key `i -> 47 `i < -> F1275 `i -> 4 `i 129  ]
+{
+"216
+[; ;function_definitions.c: 216:         return_time = 15;
+[e = _return_time -> -> 15 `i `uc ]
+"217
+[; ;function_definitions.c: 217:         menu_pos++;
+[e ++ F1275 -> -> 1 `i `uc ]
+"218
+[; ;function_definitions.c: 218:         clear_screen();
+[e ( _clear_screen ..  ]
+"219
+[; ;function_definitions.c: 219:     }
+}
+[e :U 129 ]
+[e :U 128 ]
+"221
+[; ;function_definitions.c: 221:     if (menu_pos == 4) {
+[e $ ! == -> F1275 `i -> 4 `i 130  ]
+{
+"222
+[; ;function_definitions.c: 222:         clcd_putch('*', (0xC0 + 0));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> 192 `i -> 0 `i `uc ]
+"223
+[; ;function_definitions.c: 223:         clcd_print(menu[menu_pos - 1], (0x80 + 2));
+[e ( _clcd_print (2 , -> *U + &U _menu * -> -> - -> F1275 `i -> 1 `i `ui `ux -> -> # *U &U _menu `ui `ux `*Cuc -> + -> 128 `i -> 2 `i `uc ]
+"224
+[; ;function_definitions.c: 224:         clcd_print(menu[menu_pos], (0xC0 + 2));
+[e ( _clcd_print (2 , -> *U + &U _menu * -> F1275 `ux -> -> # *U &U _menu `ui `ux `*Cuc -> + -> 192 `i -> 2 `i `uc ]
+"225
+[; ;function_definitions.c: 225:     } else {
+}
+[e $U 131  ]
+[e :U 130 ]
+{
+"226
+[; ;function_definitions.c: 226:         clcd_putch('*', (0x80 + 0));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> 128 `i -> 0 `i `uc ]
+"227
+[; ;function_definitions.c: 227:         clcd_print(menu[menu_pos], (0x80 + 2));
+[e ( _clcd_print (2 , -> *U + &U _menu * -> F1275 `ux -> -> # *U &U _menu `ui `ux `*Cuc -> + -> 128 `i -> 2 `i `uc ]
+"228
+[; ;function_definitions.c: 228:         clcd_print(menu[menu_pos + 1], (0xC0 + 2));
+[e ( _clcd_print (2 , -> *U + &U _menu * -> -> + -> F1275 `i -> 1 `i `ui `ux -> -> # *U &U _menu `ui `ux `*Cuc -> + -> 192 `i -> 2 `i `uc ]
+"229
+[; ;function_definitions.c: 229:     }
+}
+[e :U 131 ]
+"230
+[; ;function_definitions.c: 230:     return menu_pos;
+[e ) F1275 ]
+[e $UE 124  ]
+"231
+[; ;function_definitions.c: 231: }
+[e :UE 124 ]
+}
+"235
+[; ;function_definitions.c: 235: unsigned char view_records(unsigned char key, unsigned char reset_flag) {
+[v _view_records `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _view_records ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[v _reset_flag `uc ~T0 @X0 1 r2 ]
+[f ]
+"236
+[; ;function_definitions.c: 236:     static char record_number;
+[v F1279 `uc ~T0 @X0 1 s record_number ]
+"237
+[; ;function_definitions.c: 237:     unsigned char records[11];
+[v _records `uc ~T0 @X0 -> 11 `i a ]
+"238
+[; ;function_definitions.c: 238:     int record_pos;
+[v _record_pos `i ~T0 @X0 1 a ]
+"239
+[; ;function_definitions.c: 239:     unsigned char addr;
+[v _addr `uc ~T0 @X0 1 a ]
+"242
+[; ;function_definitions.c: 242:     if (record_count == -1) {
+[e $ ! == _record_count -U -> 1 `i 133  ]
+{
+"243
+[; ;function_definitions.c: 243:         clcd_print("    No logs     ", (0xC0 + 0));
+[e ( _clcd_print (2 , :s 14C -> + -> 192 `i -> 0 `i `uc ]
+"244
+[; ;function_definitions.c: 244:     } else {
+}
+[e $U 134  ]
+[e :U 133 ]
+{
+"246
+[; ;function_definitions.c: 246:         if (reset_flag == 0x08) {
+[e $ ! == -> _reset_flag `i -> 8 `i 135  ]
+{
+"247
+[; ;function_definitions.c: 247:             record_number = 0;
+[e = F1279 -> -> 0 `i `uc ]
+"248
+[; ;function_definitions.c: 248:         }
+}
+[e :U 135 ]
+"250
+[; ;function_definitions.c: 250:         if (key == 0x37 && record_number > 0) {
+[e $ ! && == -> _key `i -> 55 `i > -> F1279 `i -> 0 `i 136  ]
+{
+"251
+[; ;function_definitions.c: 251:             record_number--;
+[e -- F1279 -> -> 1 `i `uc ]
+"252
+[; ;function_definitions.c: 252:         }
+}
+[e $U 137  ]
+"253
+[; ;function_definitions.c: 253:         else if (key == 0x37 && record_number == 0) {
+[e :U 136 ]
+[e $ ! && == -> _key `i -> 55 `i == -> F1279 `i -> 0 `i 138  ]
+{
+"254
+[; ;function_definitions.c: 254:             record_number = record_count;
+[e = F1279 -> _record_count `uc ]
+"255
+[; ;function_definitions.c: 255:         }
+}
+[e $U 139  ]
+"256
+[; ;function_definitions.c: 256:         else if (key == 0x2F && record_number < record_count) {
+[e :U 138 ]
+[e $ ! && == -> _key `i -> 47 `i < -> F1279 `i _record_count 140  ]
+{
+"257
+[; ;function_definitions.c: 257:             record_number++;
+[e ++ F1279 -> -> 1 `i `uc ]
+"258
+[; ;function_definitions.c: 258:         }
+}
+[e $U 141  ]
+"259
+[; ;function_definitions.c: 259:         else if (key == 0x2F && record_number == record_count) {
+[e :U 140 ]
+[e $ ! && == -> _key `i -> 47 `i == -> F1279 `i _record_count 142  ]
+{
+"260
+[; ;function_definitions.c: 260:             record_number = 0;
+[e = F1279 -> -> 0 `i `uc ]
+"261
+[; ;function_definitions.c: 261:         }
+}
+[e :U 142 ]
+[e :U 141 ]
+[e :U 139 ]
+[e :U 137 ]
+"263
+[; ;function_definitions.c: 263:         if(key == 0x90)
+[e $ ! == -> _key `i -> 144 `i 143  ]
+"264
+[; ;function_definitions.c: 264:             return 0x33;
+[e ) -> -> 51 `i `uc ]
+[e $UE 132  ]
+[e :U 143 ]
+"266
+[; ;function_definitions.c: 266:         record_pos = record_number;
+[e = _record_pos -> F1279 `i ]
+"269
+[; ;function_definitions.c: 269:         for (int i = 0; i < 10; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 144  ]
+[e $U 145  ]
+[e :U 144 ]
+{
+"270
+[; ;function_definitions.c: 270:             addr = (record_pos * 10) + 5 + i;
+[e = _addr -> + + * _record_pos -> 10 `i -> 5 `i _i `uc ]
+"271
+[; ;function_definitions.c: 271:             records[i] = eeprom_read(addr);
+[e = *U + &U _records * -> -> _i `ui `ux -> -> # *U &U _records `ui `ux ( _eeprom_read (1 _addr ]
+"272
+[; ;function_definitions.c: 272:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 144  ]
+[e :U 145 ]
+}
+"273
+[; ;function_definitions.c: 273:         records[10] = '\0';
+[e = *U + &U _records * -> -> -> 10 `i `ui `ux -> -> # *U &U _records `ui `ux -> -> 0 `ui `uc ]
+"274
+[; ;function_definitions.c: 274:         clcd_putch(record_number + '0', (0xC0 + 0));
+[e ( _clcd_putch (2 , -> + -> F1279 `ui -> 48 `ui `uc -> + -> 192 `i -> 0 `i `uc ]
+"277
+[; ;function_definitions.c: 277:         clcd_putch(records[0], (0xC0 + 2));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 0 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 2 `i `uc ]
+"278
+[; ;function_definitions.c: 278:         clcd_putch(records[1], (0xC0 + 3));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 1 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 3 `i `uc ]
+"279
+[; ;function_definitions.c: 279:         clcd_putch(':', (0xC0 + 4));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 4 `i `uc ]
+"282
+[; ;function_definitions.c: 282:         clcd_putch(records[2], (0xC0 + 5));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 2 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 5 `i `uc ]
+"283
+[; ;function_definitions.c: 283:         clcd_putch(records[3], (0xC0 + 6));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 3 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 6 `i `uc ]
+"284
+[; ;function_definitions.c: 284:         clcd_putch(':', (0xC0 + 7));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 7 `i `uc ]
+"287
+[; ;function_definitions.c: 287:         clcd_putch(records[4], (0xC0 + 8));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 4 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 8 `i `uc ]
+"288
+[; ;function_definitions.c: 288:         clcd_putch(records[5], (0xC0 + 9));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 5 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 9 `i `uc ]
+"291
+[; ;function_definitions.c: 291:         clcd_putch(records[6], (0xC0 + 11));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 6 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 11 `i `uc ]
+"292
+[; ;function_definitions.c: 292:         clcd_putch(records[7], (0xC0 + 12));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 7 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 12 `i `uc ]
+"295
+[; ;function_definitions.c: 295:         clcd_putch(records[8], (0xC0 + 14));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 8 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 14 `i `uc ]
+"296
+[; ;function_definitions.c: 296:         clcd_putch(records[9], (0xC0 + 15));
+[e ( _clcd_putch (2 , -> *U + &U _records * -> -> -> 9 `i `ui `ux -> -> # *U &U _records `ui `ux `uc -> + -> 192 `i -> 15 `i `uc ]
+"298
+[; ;function_definitions.c: 298:         _delay((unsigned long)((500)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"299
+[; ;function_definitions.c: 299:     }
+}
+[e :U 134 ]
+"300
+[; ;function_definitions.c: 300: }
+[e :UE 132 ]
+}
+"304
+[; ;function_definitions.c: 304: char clear_records(unsigned char reset_flag) {
+[v _clear_records `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _clear_records ]
+[v _reset_flag `uc ~T0 @X0 1 r1 ]
+[f ]
+"306
+[; ;function_definitions.c: 306:     if (reset_flag == 0x44) {
+[e $ ! == -> _reset_flag `i -> 68 `i 148  ]
+{
+"307
+[; ;function_definitions.c: 307:         pos = -1;
+[e = _pos -U -> 1 `i ]
+"308
+[; ;function_definitions.c: 308:         record_count = -1;
+[e = _record_count -U -> 1 `i ]
+"311
+[; ;function_definitions.c: 311:         clcd_print("Logs cleared", (0x80 + 2));
+[e ( _clcd_print (2 , :s 15C -> + -> 128 `i -> 2 `i `uc ]
+"312
+[; ;function_definitions.c: 312:         clcd_print("successfully", (0xC0 + 2));
+[e ( _clcd_print (2 , :s 16C -> + -> 192 `i -> 2 `i `uc ]
+"313
+[; ;function_definitions.c: 313:         return 0x11;
+[e ) -> -> 17 `i `uc ]
+[e $UE 147  ]
+"314
+[; ;function_definitions.c: 314:     }
+}
+[e :U 148 ]
+"315
+[; ;function_definitions.c: 315:     return 0x22;
+[e ) -> -> 34 `i `uc ]
+[e $UE 147  ]
+"316
+[; ;function_definitions.c: 316: }
+[e :UE 147 ]
+}
+"320
+[; ;function_definitions.c: 320: void download_records(void) {
+[v _download_records `(v ~T0 @X0 1 ef ]
+{
+[e :U _download_records ]
+[f ]
+"321
+[; ;function_definitions.c: 321:     int index = -1;
+[v _index `i ~T0 @X0 1 a ]
+[e = _index -U -> 1 `i ]
+"322
+[; ;function_definitions.c: 322:     char records[11];
+[v _records `uc ~T0 @X0 -> 11 `i a ]
+"323
+[; ;function_definitions.c: 323:     records[10] = '\0';
+[e = *U + &U _records * -> -> -> 10 `i `ui `ux -> -> # *U &U _records `ui `ux -> -> 0 `ui `uc ]
+"324
+[; ;function_definitions.c: 324:     int position = 0;
+[v _position `i ~T0 @X0 1 a ]
+[e = _position -> 0 `i ]
+"325
+[; ;function_definitions.c: 325:     unsigned char addr;
+[v _addr `uc ~T0 @X0 1 a ]
+"328
+[; ;function_definitions.c: 328:     if (record_count == -1) {
+[e $ ! == _record_count -U -> 1 `i 150  ]
+{
+"329
+[; ;function_definitions.c: 329:         puts("No logs available");
+[e ( _puts (1 :s 17C ]
+"330
+[; ;function_definitions.c: 330:     }
+}
+[e $U 151  ]
+"331
+[; ;function_definitions.c: 331:     else {
+[e :U 150 ]
+{
+"332
+[; ;function_definitions.c: 332:         puts("Logs :");
+[e ( _puts (1 :s 18C ]
+"333
+[; ;function_definitions.c: 333:         putchar('\n');
+[e ( _putchar (1 -> -> 10 `ui `uc ]
+"335
+[; ;function_definitions.c: 335:         puts(" #     Time        Event       Speed");
+[e ( _puts (1 :s 19C ]
+"336
+[; ;function_definitions.c: 336:         putchar('\n');
+[e ( _putchar (1 -> -> 10 `ui `uc ]
+"339
+[; ;function_definitions.c: 339:         while (index < record_count) {
+[e $U 152  ]
+[e :U 153 ]
+{
+"341
+[; ;function_definitions.c: 341:             position = index + 1;
+[e = _position + _index -> 1 `i ]
+"343
+[; ;function_definitions.c: 343:             index++;
+[e ++ _index -> 1 `i ]
+"346
+[; ;function_definitions.c: 346:             for (int i = 0; i < 10; i++) {
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 155  ]
+[e $U 156  ]
+[e :U 155 ]
+{
+"348
+[; ;function_definitions.c: 348:                 addr = (unsigned char) (position * 10 + 5 + i);
+[e = _addr -> + + * _position -> 10 `i -> 5 `i _i `uc ]
+"350
+[; ;function_definitions.c: 350:                 records[i] = eeprom_read(addr);
+[e = *U + &U _records * -> -> _i `ui `ux -> -> # *U &U _records `ui `ux -> ( _eeprom_read (1 _addr `uc ]
+"351
+[; ;function_definitions.c: 351:             }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 155  ]
+[e :U 156 ]
+}
+"354
+[; ;function_definitions.c: 354:             if (index < 10)
+[e $ ! < _index -> 10 `i 158  ]
+"355
+[; ;function_definitions.c: 355:                 putchar(' ');
+[e ( _putchar (1 -> -> 32 `ui `uc ]
+[e :U 158 ]
+"357
+[; ;function_definitions.c: 357:             putchar(index + '0');
+[e ( _putchar (1 -> + -> _index `ui -> 48 `ui `uc ]
+"358
+[; ;function_definitions.c: 358:             puts("   ");
+[e ( _puts (1 :s 20C ]
+"361
+[; ;function_definitions.c: 361:             putchar(records[0]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 0 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"362
+[; ;function_definitions.c: 362:             putchar(records[1]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 1 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"363
+[; ;function_definitions.c: 363:             putchar(':');
+[e ( _putchar (1 -> -> 58 `ui `uc ]
+"366
+[; ;function_definitions.c: 366:             putchar(records[2]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 2 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"367
+[; ;function_definitions.c: 367:             putchar(records[3]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 3 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"368
+[; ;function_definitions.c: 368:             putchar(':');
+[e ( _putchar (1 -> -> 58 `ui `uc ]
+"371
+[; ;function_definitions.c: 371:             putchar(records[4]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 4 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"372
+[; ;function_definitions.c: 372:             putchar(records[5]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 5 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"374
+[; ;function_definitions.c: 374:             puts("      ");
+[e ( _puts (1 :s 21C ]
+"377
+[; ;function_definitions.c: 377:             putchar(records[6]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 6 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"378
+[; ;function_definitions.c: 378:             putchar(records[7]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 7 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"380
+[; ;function_definitions.c: 380:             puts("          ");
+[e ( _puts (1 :s 22C ]
+"383
+[; ;function_definitions.c: 383:             putchar(records[8]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 8 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"384
+[; ;function_definitions.c: 384:             putchar(records[9]);
+[e ( _putchar (1 -> *U + &U _records * -> -> -> 9 `i `ui `ux -> -> # *U &U _records `ui `ux `uc ]
+"385
+[; ;function_definitions.c: 385:             putchar('\n');
+[e ( _putchar (1 -> -> 10 `ui `uc ]
+"386
+[; ;function_definitions.c: 386:         }
+}
+[e :U 152 ]
+"339
+[; ;function_definitions.c: 339:         while (index < record_count) {
+[e $ < _index _record_count 153  ]
+[e :U 154 ]
+"387
+[; ;function_definitions.c: 387:     }
+}
+[e :U 151 ]
+"388
+[; ;function_definitions.c: 388: }
+[e :UE 149 ]
+}
+"392
+[; ;function_definitions.c: 392: unsigned char set_time(unsigned char key, unsigned char reset_flag) {
+[v _set_time `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _set_time ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[v _reset_flag `uc ~T0 @X0 1 r2 ]
+[f ]
+"393
+[; ;function_definitions.c: 393:     static unsigned int new_time[3];
+[v F1295 `ui ~T0 @X0 -> 3 `i s new_time ]
+"394
+[; ;function_definitions.c: 394:     static unsigned int blink_pos;
+[v F1296 `ui ~T0 @X0 1 s blink_pos ]
+"395
+[; ;function_definitions.c: 395:     static unsigned char wait;
+[v F1297 `uc ~T0 @X0 1 s wait ]
+"396
+[; ;function_definitions.c: 396:     static unsigned char blink;
+[v F1298 `uc ~T0 @X0 1 s blink ]
+"397
+[; ;function_definitions.c: 397:     static char t_done = 0;
+[v F1299 `uc ~T0 @X0 1 s t_done ]
+[i F1299
+-> -> 0 `i `uc
+]
+"398
+[; ;function_definitions.c: 398:     char buffer;
+[v _buffer `uc ~T0 @X0 1 a ]
+"401
+[; ;function_definitions.c: 401:     if (reset_flag == 0x30) {
+[e $ ! == -> _reset_flag `i -> 48 `i 160  ]
+{
+"403
+[; ;function_definitions.c: 403:         get_time();
+[e ( _get_time ..  ]
+"405
+[; ;function_definitions.c: 405:         new_time[0] = (time[0] & 0x0F) * 10 + (time[1] & 0x0F);
+[e = *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> + * & -> *U + &U _time * -> -> -> 0 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i -> 10 `i & -> *U + &U _time * -> -> -> 1 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i `ui ]
+"407
+[; ;function_definitions.c: 407:         new_time[1] = (time[2] & 0x0F) * 10 + (time[3] & 0x0F);
+[e = *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> + * & -> *U + &U _time * -> -> -> 2 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i -> 10 `i & -> *U + &U _time * -> -> -> 3 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i `ui ]
+"409
+[; ;function_definitions.c: 409:         new_time[2] = (time[4] & 0x0F) * 10 + (time[5] & 0x0F);
+[e = *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> + * & -> *U + &U _time * -> -> -> 4 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i -> 10 `i & -> *U + &U _time * -> -> -> 5 `i `ui `ux -> -> # *U &U _time `ui `ux `i -> 15 `i `ui ]
+"411
+[; ;function_definitions.c: 411:         clcd_print("Time (HH:MM:SS)", (0x80 + 0));
+[e ( _clcd_print (2 , :s 23C -> + -> 128 `i -> 0 `i `uc ]
+"414
+[; ;function_definitions.c: 414:         blink_pos = 2;
+[e = F1296 -> -> 2 `i `ui ]
+"415
+[; ;function_definitions.c: 415:         wait = 0;
+[e = F1297 -> -> 0 `i `uc ]
+"416
+[; ;function_definitions.c: 416:         blink = 0;
+[e = F1298 -> -> 0 `i `uc ]
+"417
+[; ;function_definitions.c: 417:         t_done = 0;
+[e = F1299 -> -> 0 `i `uc ]
+"418
+[; ;function_definitions.c: 418:         key = 0x3F;
+[e = _key -> -> 63 `i `uc ]
+"419
+[; ;function_definitions.c: 419:     }
+}
+[e :U 160 ]
+"422
+[; ;function_definitions.c: 422:     if (t_done)
+[e $ ! != -> F1299 `i -> 0 `i 161  ]
+"423
+[; ;function_definitions.c: 423:         return 0x22;
+[e ) -> -> 34 `i `uc ]
+[e $UE 159  ]
+[e :U 161 ]
+"426
+[; ;function_definitions.c: 426:     switch (key) {
+[e $U 163  ]
+{
+"428
+[; ;function_definitions.c: 428:         case 0x37:
+[e :U 164 ]
+"429
+[; ;function_definitions.c: 429:             new_time[blink_pos]++;
+[e ++ *U + &U F1295 * -> F1296 `ux -> -> # *U &U F1295 `ui `ux -> -> 1 `i `ui ]
+"430
+[; ;function_definitions.c: 430:             break;
+[e $U 162  ]
+"432
+[; ;function_definitions.c: 432:         case 0x2F:
+[e :U 165 ]
+"433
+[; ;function_definitions.c: 433:             blink_pos = (blink_pos + 1) % 3;
+[e = F1296 % + F1296 -> -> 1 `i `ui -> -> 3 `i `ui ]
+"434
+[; ;function_definitions.c: 434:             break;
+[e $U 162  ]
+"436
+[; ;function_definitions.c: 436:         case 0x80:
+[e :U 166 ]
+"438
+[; ;function_definitions.c: 438:             get_time();
+[e ( _get_time ..  ]
+"440
+[; ;function_definitions.c: 440:             buffer = (char) (((new_time[0] / 10) << 4) | new_time[0] % 10);
+[e = _buffer -> | << / *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 4 `i % *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui `uc ]
+"441
+[; ;function_definitions.c: 441:             clock_reg[0] = (clock_reg[0] & 0xC0) | buffer;
+[e = *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux -> | & -> *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 192 `i -> _buffer `i `uc ]
+"443
+[; ;function_definitions.c: 443:             write_ds1307(0x02, clock_reg[0]);
+[e ( _write_ds1307 (2 , -> -> 2 `i `uc *U + &U _clock_reg * -> -> -> 0 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ]
+"446
+[; ;function_definitions.c: 446:             buffer = (char) (((new_time[1] / 10) << 4) | new_time[1] % 10);
+[e = _buffer -> | << / *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 4 `i % *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui `uc ]
+"447
+[; ;function_definitions.c: 447:             clock_reg[1] = (clock_reg[1] & 0x80) | buffer;
+[e = *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux -> | & -> *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 128 `i -> _buffer `i `uc ]
+"448
+[; ;function_definitions.c: 448:             write_ds1307(0x01, clock_reg[1]);
+[e ( _write_ds1307 (2 , -> -> 1 `i `uc *U + &U _clock_reg * -> -> -> 1 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ]
+"451
+[; ;function_definitions.c: 451:             buffer = (char) (((new_time[2] / 10) << 4) | new_time[2] % 10);
+[e = _buffer -> | << / *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 4 `i % *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui `uc ]
+"452
+[; ;function_definitions.c: 452:             clock_reg[2] = (clock_reg[2] & 0x80) | buffer;
+[e = *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux -> | & -> *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux `i -> 128 `i -> _buffer `i `uc ]
+"453
+[; ;function_definitions.c: 453:             write_ds1307(0x00, clock_reg[2]);
+[e ( _write_ds1307 (2 , -> -> 0 `i `uc *U + &U _clock_reg * -> -> -> 2 `i `ui `ux -> -> # *U &U _clock_reg `ui `ux ]
+"456
+[; ;function_definitions.c: 456:             clcd_write(0x01, 0);
+[e ( _clcd_write (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"458
+[; ;function_definitions.c: 458:             clcd_print("Time changed", (0x80 + 2));
+[e ( _clcd_print (2 , :s 24C -> + -> 128 `i -> 2 `i `uc ]
+"459
+[; ;function_definitions.c: 459:             clcd_print("Successfully", (0xC0 + 2));
+[e ( _clcd_print (2 , :s 25C -> + -> 192 `i -> 2 `i `uc ]
+"461
+[; ;function_definitions.c: 461:             t_done = 1;
+[e = F1299 -> -> 1 `i `uc ]
+"463
+[; ;function_definitions.c: 463:             _delay((unsigned long)((1000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"465
+[; ;function_definitions.c: 465:             return 0x11;
+[e ) -> -> 17 `i `uc ]
+[e $UE 159  ]
+"466
+[; ;function_definitions.c: 466:     }
+}
+[e $U 162  ]
+[e :U 163 ]
+[e [\ _key , $ -> 55 `i 164
+ , $ -> 47 `i 165
+ , $ -> 128 `i 166
+ 162 ]
+[e :U 162 ]
+"469
+[; ;function_definitions.c: 469:     if (new_time[0] > 23)
+[e $ ! > *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 23 `i `ui 167  ]
+"470
+[; ;function_definitions.c: 470:         new_time[0] = 0;
+[e = *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 0 `i `ui ]
+[e :U 167 ]
+"471
+[; ;function_definitions.c: 471:     if (new_time[1] > 59)
+[e $ ! > *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 59 `i `ui 168  ]
+"472
+[; ;function_definitions.c: 472:         new_time[1] = 0;
+[e = *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 0 `i `ui ]
+[e :U 168 ]
+"473
+[; ;function_definitions.c: 473:     if (new_time[2] > 59)
+[e $ ! > *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 59 `i `ui 169  ]
+"474
+[; ;function_definitions.c: 474:         new_time[2] = 0;
+[e = *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 0 `i `ui ]
+[e :U 169 ]
+"477
+[; ;function_definitions.c: 477:     if (wait++ == 1) {
+[e $ ! == -> ++ F1297 -> -> 1 `i `uc `i -> 1 `i 170  ]
+{
+"478
+[; ;function_definitions.c: 478:         wait = 0;
+[e = F1297 -> -> 0 `i `uc ]
+"479
+[; ;function_definitions.c: 479:         blink = !blink;
+[e = F1298 -> -> ! != -> F1298 `i -> 0 `i `i `uc ]
+"482
+[; ;function_definitions.c: 482:         if (blink) {
+[e $ ! != -> F1298 `i -> 0 `i 171  ]
+{
+"483
+[; ;function_definitions.c: 483:             switch (blink_pos) {
+[e $U 173  ]
+{
+"485
+[; ;function_definitions.c: 485:                 case 0:
+[e :U 174 ]
+"486
+[; ;function_definitions.c: 486:                     clcd_print("  ", (0xC0 + 0));
+[e ( _clcd_print (2 , :s 26C -> + -> 192 `i -> 0 `i `uc ]
+"487
+[; ;function_definitions.c: 487:                     _delay((unsigned long)((160)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 160 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"488
+[; ;function_definitions.c: 488:                     break;
+[e $U 172  ]
+"490
+[; ;function_definitions.c: 490:                 case 1:
+[e :U 175 ]
+"491
+[; ;function_definitions.c: 491:                     clcd_print("  ", (0xC0 + 3));
+[e ( _clcd_print (2 , :s 27C -> + -> 192 `i -> 3 `i `uc ]
+"492
+[; ;function_definitions.c: 492:                     _delay((unsigned long)((160)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 160 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"493
+[; ;function_definitions.c: 493:                     break;
+[e $U 172  ]
+"495
+[; ;function_definitions.c: 495:                 case 2:
+[e :U 176 ]
+"496
+[; ;function_definitions.c: 496:                     clcd_print("  ", (0xC0 + 6));
+[e ( _clcd_print (2 , :s 28C -> + -> 192 `i -> 6 `i `uc ]
+"497
+[; ;function_definitions.c: 497:                     _delay((unsigned long)((160)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 160 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"498
+[; ;function_definitions.c: 498:                     break;
+[e $U 172  ]
+"499
+[; ;function_definitions.c: 499:             }
+}
+[e $U 172  ]
+[e :U 173 ]
+[e [\ F1296 , $ -> -> 0 `i `ui 174
+ , $ -> -> 1 `i `ui 175
+ , $ -> -> 2 `i `ui 176
+ 172 ]
+[e :U 172 ]
+"500
+[; ;function_definitions.c: 500:         }
+}
+[e :U 171 ]
+"501
+[; ;function_definitions.c: 501:     }
+}
+[e :U 170 ]
+"504
+[; ;function_definitions.c: 504:     clcd_putch((char) new_time[0] / 10 + '0', (0xC0 + 0));
+[e ( _clcd_putch (2 , -> + -> / -> -> *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux `uc `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 0 `i `uc ]
+"505
+[; ;function_definitions.c: 505:     clcd_putch(new_time[0] % 10 + '0', (0xC0 + 1));
+[e ( _clcd_putch (2 , -> + % *U + &U F1295 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 1 `i `uc ]
+"506
+[; ;function_definitions.c: 506:     clcd_putch(':', (0xC0 + 2));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 2 `i `uc ]
+"509
+[; ;function_definitions.c: 509:     clcd_putch((char) new_time[1] / 10 + '0', (0xC0 + 3));
+[e ( _clcd_putch (2 , -> + -> / -> -> *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux `uc `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 3 `i `uc ]
+"510
+[; ;function_definitions.c: 510:     clcd_putch(new_time[1] % 10 + '0', (0xC0 + 4));
+[e ( _clcd_putch (2 , -> + % *U + &U F1295 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 4 `i `uc ]
+"511
+[; ;function_definitions.c: 511:     clcd_putch(':', (0xC0 + 5));
+[e ( _clcd_putch (2 , -> -> 58 `ui `uc -> + -> 192 `i -> 5 `i `uc ]
+"514
+[; ;function_definitions.c: 514:     clcd_putch((char) new_time[2] / 10 + '0', (0xC0 + 6));
+[e ( _clcd_putch (2 , -> + -> / -> -> *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux `uc `i -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 6 `i `uc ]
+"515
+[; ;function_definitions.c: 515:     clcd_putch(new_time[2] % 10 + '0', (0xC0 + 7));
+[e ( _clcd_putch (2 , -> + % *U + &U F1295 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1295 `ui `ux -> -> 10 `i `ui -> 48 `ui `uc -> + -> 192 `i -> 7 `i `uc ]
+"517
+[; ;function_definitions.c: 517:     return 0x22;
+[e ) -> -> 34 `i `uc ]
+[e $UE 159  ]
+"518
+[; ;function_definitions.c: 518: }
+[e :UE 159 ]
+}
+"522
+[; ;function_definitions.c: 522: unsigned char password_change(unsigned char key, unsigned char reset_flag) {
+[v _password_change `(uc ~T0 @X0 1 ef2`uc`uc ]
+{
+[e :U _password_change ]
+[v _key `uc ~T0 @X0 1 r1 ]
+[v _reset_flag `uc ~T0 @X0 1 r2 ]
+[f ]
+"524
+[; ;function_definitions.c: 524:     static char usr_pwd[4];
+[v F1304 `uc ~T0 @X0 -> 4 `i s usr_pwd ]
+"525
+[; ;function_definitions.c: 525:     static char re_usr_pwd[4];
+[v F1305 `uc ~T0 @X0 -> 4 `i s re_usr_pwd ]
+"526
+[; ;function_definitions.c: 526:     static char pwd_changed = 0;
+[v F1306 `uc ~T0 @X0 1 s pwd_changed ]
+[i F1306
+-> -> 0 `i `uc
+]
+"527
+[; ;function_definitions.c: 527:     static unsigned int pass_pos;
+[v F1307 `ui ~T0 @X0 1 s pass_pos ]
+"528
+[; ;function_definitions.c: 528:     static unsigned int re_pass_pos;
+[v F1308 `ui ~T0 @X0 1 s re_pass_pos ]
+"529
+[; ;function_definitions.c: 529:     static unsigned char stage = 0;
+[v F1309 `uc ~T0 @X0 1 s stage ]
+[i F1309
+-> -> 0 `i `uc
+]
+"532
+[; ;function_definitions.c: 532:     if (reset_flag == 0x02) {
+[e $ ! == -> _reset_flag `i -> 2 `i 178  ]
+{
+"533
+[; ;function_definitions.c: 533:         pass_pos = 0;
+[e = F1307 -> -> 0 `i `ui ]
+"534
+[; ;function_definitions.c: 534:         re_pass_pos = 0;
+[e = F1308 -> -> 0 `i `ui ]
+"535
+[; ;function_definitions.c: 535:         pwd_changed = 0;
+[e = F1306 -> -> 0 `i `uc ]
+"536
+[; ;function_definitions.c: 536:         stage = 0;
+[e = F1309 -> -> 0 `i `uc ]
+"539
+[; ;function_definitions.c: 539:         usr_pwd[0] = '\0';
+[e = *U + &U F1304 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1304 `ui `ux -> -> 0 `ui `uc ]
+"540
+[; ;function_definitions.c: 540:         usr_pwd[1] = '\0';
+[e = *U + &U F1304 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1304 `ui `ux -> -> 0 `ui `uc ]
+"541
+[; ;function_definitions.c: 541:         usr_pwd[2] = '\0';
+[e = *U + &U F1304 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1304 `ui `ux -> -> 0 `ui `uc ]
+"542
+[; ;function_definitions.c: 542:         usr_pwd[3] = '\0';
+[e = *U + &U F1304 * -> -> -> 3 `i `ui `ux -> -> # *U &U F1304 `ui `ux -> -> 0 `ui `uc ]
+"544
+[; ;function_definitions.c: 544:         re_usr_pwd[0] = '\0';
+[e = *U + &U F1305 * -> -> -> 0 `i `ui `ux -> -> # *U &U F1305 `ui `ux -> -> 0 `ui `uc ]
+"545
+[; ;function_definitions.c: 545:         re_usr_pwd[1] = '\0';
+[e = *U + &U F1305 * -> -> -> 1 `i `ui `ux -> -> # *U &U F1305 `ui `ux -> -> 0 `ui `uc ]
+"546
+[; ;function_definitions.c: 546:         re_usr_pwd[2] = '\0';
+[e = *U + &U F1305 * -> -> -> 2 `i `ui `ux -> -> # *U &U F1305 `ui `ux -> -> 0 `ui `uc ]
+"547
+[; ;function_definitions.c: 547:         re_usr_pwd[3] = '\0';
+[e = *U + &U F1305 * -> -> -> 3 `i `ui `ux -> -> # *U &U F1305 `ui `ux -> -> 0 `ui `uc ]
+"549
+[; ;function_definitions.c: 549:         key = 0x3F;
+[e = _key -> -> 63 `i `uc ]
+"550
+[; ;function_definitions.c: 550:         return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"551
+[; ;function_definitions.c: 551:     }
+}
+[e :U 178 ]
+"554
+[; ;function_definitions.c: 554:     if (return_time == 0) {
+[e $ ! == -> _return_time `i -> 0 `i 179  ]
+{
+"555
+[; ;function_definitions.c: 555:         return 0x33;
+[e ) -> -> 51 `i `uc ]
+[e $UE 177  ]
+"556
+[; ;function_definitions.c: 556:     }
+}
+[e :U 179 ]
+"559
+[; ;function_definitions.c: 559:     if (pwd_changed) {
+[e $ ! != -> F1306 `i -> 0 `i 180  ]
+{
+"560
+[; ;function_definitions.c: 560:         return 0x22;
+[e ) -> -> 34 `i `uc ]
+[e $UE 177  ]
+"561
+[; ;function_definitions.c: 561:     }
+}
+[e :U 180 ]
+"564
+[; ;function_definitions.c: 564:     if (stage == 0) {
+[e $ ! == -> F1309 `i -> 0 `i 181  ]
+{
+"565
+[; ;function_definitions.c: 565:         if (key == 0x37 && pass_pos < 4) {
+[e $ ! && == -> _key `i -> 55 `i < F1307 -> -> 4 `i `ui 182  ]
+{
+"566
+[; ;function_definitions.c: 566:             usr_pwd[pass_pos] = '1';
+[e = *U + &U F1304 * -> F1307 `ux -> -> # *U &U F1304 `ui `ux -> -> 49 `ui `uc ]
+"567
+[; ;function_definitions.c: 567:             clcd_putch('*', (0xC0 + 6 + pass_pos));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> + -> 192 `i -> 6 `i `ui F1307 `uc ]
+"568
+[; ;function_definitions.c: 568:             pass_pos++;
+[e ++ F1307 -> -> 1 `i `ui ]
+"569
+[; ;function_definitions.c: 569:             return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"570
+[; ;function_definitions.c: 570:         } else if (key == 0x2F && pass_pos < 4) {
+}
+[e $U 183  ]
+[e :U 182 ]
+[e $ ! && == -> _key `i -> 47 `i < F1307 -> -> 4 `i `ui 184  ]
+{
+"571
+[; ;function_definitions.c: 571:             usr_pwd[pass_pos] = '0';
+[e = *U + &U F1304 * -> F1307 `ux -> -> # *U &U F1304 `ui `ux -> -> 48 `ui `uc ]
+"572
+[; ;function_definitions.c: 572:             clcd_putch('*', (0xC0 + 6 + pass_pos));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> + -> 192 `i -> 6 `i `ui F1307 `uc ]
+"573
+[; ;function_definitions.c: 573:             pass_pos++;
+[e ++ F1307 -> -> 1 `i `ui ]
+"574
+[; ;function_definitions.c: 574:             return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"575
+[; ;function_definitions.c: 575:         }
+}
+[e :U 184 ]
+[e :U 183 ]
+"578
+[; ;function_definitions.c: 578:         if (pass_pos == 4) {
+[e $ ! == F1307 -> -> 4 `i `ui 185  ]
+{
+"579
+[; ;function_definitions.c: 579:             clear_screen();
+[e ( _clear_screen ..  ]
+"580
+[; ;function_definitions.c: 580:             clcd_print("Re-enter new pwd", (0x80 + 0));
+[e ( _clcd_print (2 , :s 29C -> + -> 128 `i -> 0 `i `uc ]
+"581
+[; ;function_definitions.c: 581:             clcd_write((0xC0 + 5), 0);
+[e ( _clcd_write (2 , -> + -> 192 `i -> 5 `i `uc -> -> 0 `i `uc ]
+"582
+[; ;function_definitions.c: 582:             clcd_write(0x0F, 0);
+[e ( _clcd_write (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
+"583
+[; ;function_definitions.c: 583:             _delay((unsigned long)((100)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"584
+[; ;function_definitions.c: 584:             stage = 1;
+[e = F1309 -> -> 1 `i `uc ]
+"585
+[; ;function_definitions.c: 585:             re_pass_pos = 0;
+[e = F1308 -> -> 0 `i `ui ]
+"586
+[; ;function_definitions.c: 586:         }
+}
+[e :U 185 ]
+"587
+[; ;function_definitions.c: 587:     } else if (stage == 1) {
+}
+[e $U 186  ]
+[e :U 181 ]
+[e $ ! == -> F1309 `i -> 1 `i 187  ]
+{
+"588
+[; ;function_definitions.c: 588:         switch (key) {
+[e $U 189  ]
+{
+"589
+[; ;function_definitions.c: 589:             case 0x2F:
+[e :U 190 ]
+"590
+[; ;function_definitions.c: 590:                 re_usr_pwd[re_pass_pos] = '0';
+[e = *U + &U F1305 * -> F1308 `ux -> -> # *U &U F1305 `ui `ux -> -> 48 `ui `uc ]
+"591
+[; ;function_definitions.c: 591:                 clcd_putch('*', (0xC0 + 6 + re_pass_pos));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> + -> 192 `i -> 6 `i `ui F1308 `uc ]
+"592
+[; ;function_definitions.c: 592:                 re_pass_pos++;
+[e ++ F1308 -> -> 1 `i `ui ]
+"593
+[; ;function_definitions.c: 593:                 return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"594
+[; ;function_definitions.c: 594:                 break;
+[e $U 188  ]
+"595
+[; ;function_definitions.c: 595:             case 0x37:
+[e :U 191 ]
+"596
+[; ;function_definitions.c: 596:                 re_usr_pwd[re_pass_pos] = '1';
+[e = *U + &U F1305 * -> F1308 `ux -> -> # *U &U F1305 `ui `ux -> -> 49 `ui `uc ]
+"597
+[; ;function_definitions.c: 597:                 clcd_putch('*', (0xC0 + 6 + re_pass_pos));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> + -> 192 `i -> 6 `i `ui F1308 `uc ]
+"598
+[; ;function_definitions.c: 598:                 re_pass_pos++;
+[e ++ F1308 -> -> 1 `i `ui ]
+"599
+[; ;function_definitions.c: 599:                 return_time = 5;
+[e = _return_time -> -> 5 `i `uc ]
+"600
+[; ;function_definitions.c: 600:                 break;
+[e $U 188  ]
+"601
+[; ;function_definitions.c: 601:         }
+}
+[e $U 188  ]
+[e :U 189 ]
+[e [\ _key , $ -> 47 `i 190
+ , $ -> 55 `i 191
+ 188 ]
+[e :U 188 ]
+"604
+[; ;function_definitions.c: 604:         if (re_pass_pos == 4) {
+[e $ ! == F1308 -> -> 4 `i `ui 192  ]
+{
+"606
+[; ;function_definitions.c: 606:             if (strncmp(usr_pwd, re_usr_pwd, 4) == 0) {
+[e $ ! == ( _strncmp (3 , , -> &U F1304 `*Cuc -> &U F1305 `*Cuc -> -> 4 `i `ui -> 0 `i 193  ]
+{
+"608
+[; ;function_definitions.c: 608:                 eeprom_write_string(0x00, &usr_pwd[4]);
+[e ( _eeprom_write_string (2 , -> -> 0 `i `uc &U *U + &U F1304 * -> -> -> 4 `i `ui `ux -> -> # *U &U F1304 `ui `ux ]
+"609
+[; ;function_definitions.c: 609:                 pwd_changed = 1;
+[e = F1306 -> -> 1 `i `uc ]
+"610
+[; ;function_definitions.c: 610:                 clear_screen();
+[e ( _clear_screen ..  ]
+"611
+[; ;function_definitions.c: 611:                 clcd_write(0x0C, 0);
+[e ( _clcd_write (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"612
+[; ;function_definitions.c: 612:                 _delay((unsigned long)((100)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"613
+[; ;function_definitions.c: 613:                 clcd_print("Password changed", (0x80 + 0));
+[e ( _clcd_print (2 , :s 30C -> + -> 128 `i -> 0 `i `uc ]
+"614
+[; ;function_definitions.c: 614:                 clcd_print("successfully", (0xC0 + 2));
+[e ( _clcd_print (2 , :s 31C -> + -> 192 `i -> 2 `i `uc ]
+"615
+[; ;function_definitions.c: 615:                 _delay((unsigned long)((1000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"616
+[; ;function_definitions.c: 616:                 return_time = 15;
+[e = _return_time -> -> 15 `i `uc ]
+"617
+[; ;function_definitions.c: 617:                 return 0x11;
+[e ) -> -> 17 `i `uc ]
+[e $UE 177  ]
+"618
+[; ;function_definitions.c: 618:             } else {
+}
+[e $U 194  ]
+[e :U 193 ]
+{
+"620
+[; ;function_definitions.c: 620:                 clear_screen();
+[e ( _clear_screen ..  ]
+"621
+[; ;function_definitions.c: 621:                 clcd_write(0x0C, 0);
+[e ( _clcd_write (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
+"622
+[; ;function_definitions.c: 622:                 _delay((unsigned long)((100)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"623
+[; ;function_definitions.c: 623:                 clcd_print("Password  change", (0x80 + 0));
+[e ( _clcd_print (2 , :s 32C -> + -> 128 `i -> 0 `i `uc ]
+"624
+[; ;function_definitions.c: 624:                 clcd_print("failed", (0xC0 + 5));
+[e ( _clcd_print (2 , :s 33C -> + -> 192 `i -> 5 `i `uc ]
+"625
+[; ;function_definitions.c: 625:                 pwd_changed = 1;
+[e = F1306 -> -> 1 `i `uc ]
+"626
+[; ;function_definitions.c: 626:                 _delay((unsigned long)((1000)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"627
+[; ;function_definitions.c: 627:                 return_time = 15;
+[e = _return_time -> -> 15 `i `uc ]
+"628
+[; ;function_definitions.c: 628:                 return 0x11;
+[e ) -> -> 17 `i `uc ]
+[e $UE 177  ]
+"629
+[; ;function_definitions.c: 629:             }
+}
+[e :U 194 ]
+"630
+[; ;function_definitions.c: 630:         }
+}
+[e :U 192 ]
+"631
+[; ;function_definitions.c: 631:     }
+}
+[e :U 187 ]
+[e :U 186 ]
+"633
+[; ;function_definitions.c: 633:     return 0x22;
+[e ) -> -> 34 `i `uc ]
+[e $UE 177  ]
+"634
+[; ;function_definitions.c: 634: }
+[e :UE 177 ]
+}
+"638
+[; ;function_definitions.c: 638: void clear_screen(void) {
+[v _clear_screen `(v ~T0 @X0 1 ef ]
+{
+[e :U _clear_screen ]
+[f ]
+"639
+[; ;function_definitions.c: 639:     clcd_write(0x01, 0);
+[e ( _clcd_write (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"640
+[; ;function_definitions.c: 640:     _delay((unsigned long)((500)*(20000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"641
+[; ;function_definitions.c: 641: }
+[e :UE 195 ]
+}
+[a 16C 115 117 99 99 101 115 115 102 117 108 108 121 0 ]
+[a 31C 115 117 99 99 101 115 115 102 117 108 108 121 0 ]
+[a 25C 83 117 99 99 101 115 115 102 117 108 108 121 0 ]
+[a 12C 97 116 116 101 109 112 116 115 32 108 101 102 116 0 ]
+[a 7C 76 111 103 105 110 32 83 117 99 99 101 115 115 0 ]
+[a 1C 86 105 101 119 32 76 111 103 0 ]
+[a 2C 67 108 101 97 114 32 76 111 103 0 ]
+[a 3C 68 111 119 110 108 111 97 100 32 76 111 103 0 ]
+[a 4C 83 101 116 32 84 105 109 101 0 ]
+[a 17C 78 111 32 108 111 103 115 32 97 118 97 105 108 97 98 108 101 0 ]
+[a 32C 80 97 115 115 119 111 114 100 32 32 99 104 97 110 103 101 0 ]
+[a 5C 67 104 97 110 103 101 32 80 97 115 115 119 100 0 ]
+[a 29C 82 101 45 101 110 116 101 114 32 110 101 119 32 112 119 100 0 ]
+[a 13C 69 110 116 101 114 32 80 97 115 115 119 111 114 100 0 ]
+[a 11C 87 114 111 110 103 32 80 97 115 115 119 111 114 100 0 ]
+[a 15C 76 111 103 115 32 99 108 101 97 114 101 100 0 ]
+[a 33C 102 97 105 108 101 100 0 ]
+[a 8C 89 111 117 32 97 114 101 32 66 108 111 99 107 101 100 0 ]
+[a 24C 84 105 109 101 32 99 104 97 110 103 101 100 0 ]
+[a 30C 80 97 115 115 119 111 114 100 32 99 104 97 110 103 101 100 0 ]
+[a 19C 32 35 32 32 32 32 32 84 105 109 101 32 32 32 32 32 32 32 32 69 118 101 110 116 32 32 32 32 32 32 32 83 112 101 101 100 0 ]
+[a 10C 115 101 99 0 ]
+[a 6C 84 73 77 69 32 32 32 32 32 69 32 32 83 80 0 ]
+[a 18C 76 111 103 115 32 58 0 ]
+[a 9C 87 97 105 116 32 102 111 114 46 46 46 0 ]
+[a 23C 84 105 109 101 32 40 72 72 58 77 77 58 83 83 41 0 ]
+[a 14C 32 32 32 32 78 111 32 108 111 103 115 32 32 32 32 32 0 ]
+[a 22C 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 21C 32 32 32 32 32 32 0 ]
+[a 20C 32 32 32 0 ]
+[a 26C 32 32 0 ]
+[a 27C 32 32 0 ]
+[a 28C 32 32 0 ]
